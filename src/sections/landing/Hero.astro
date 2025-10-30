@@ -1,27 +1,116 @@
 ---
+import { Swiper, SwiperWrapper, SwiperSlide } from "astro-swiper";
+import type { AstroSwiperType } from "astro-swiper";
 
+const astroSwiperOptions: AstroSwiperType = {
+  options: {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: true,
+    },
+    speed: 1000,
+    effect: "fade",
+    navigation: {
+      nextEl: ".swiper-arrow-next",
+      prevEl: ".swiper-arrow-prev",
+    },
+  },
+};
 ---
 
 <main class="emme-landing-hero">
-	<img class="hero-image" src="/images/sections/landing/hero-01.jpg" alt="Odontopediatría en consulta EMME Dental" fetchpriority="high" />
+  <Swiper options={astroSwiperOptions.options} class="not-content">
+    <SwiperWrapper>
+      {
+        Array.from({ length: 5 }).map((_, index) => (
+          <SwiperSlide>
+            <img
+              class="hero-image"
+              src={`/images/sections/landing/hero-0${index + 1}.jpeg`}
+              alt="Odontopediatría en consulta EMME Dental"
+              fetchpriority={index === 0 ? "high" : "low"}
+            />
+          </SwiperSlide>
+        ))
+      }
+    </SwiperWrapper>
+
+    <img
+      class="swiper-arrow-prev"
+      src="/images/utils/arrow-left.svg"
+      alt="Diapositiva anterior"
+    />
+
+    <img
+      class="swiper-arrow-next"
+      src="/images/utils/arrow-right.svg"
+      alt="Diapositiva siguiente"
+    />
+  </Swiper>
 </main>
 
 <style>
-	.emme-landing-hero {
-		position: relative;
-		min-height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+  .emme-landing-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
 
-	.hero-image {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		z-index: -1;
-	}
+  .swiper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    user-select: none;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  /* === Flechas de navegación === */
+  [class^="swiper-arrow-"] {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%) translateX(0);
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+    transition:
+      transform 300ms ease-in-out,
+      opacity 300ms ease-in-out;
+  }
+
+  .swiper-arrow-prev {
+    left: 0;
+    transform: translate(-60px, -50%); /* fuera del viewport horizontalmente */
+  }
+
+  .swiper-arrow-next {
+    right: 0;
+    transform: translate(60px, -50%); /* fuera del viewport horizontalmente */
+  }
+
+  /* Hover en el slider → las flechas entran y aparecen */
+  .emme-landing-hero:hover .swiper-arrow-prev {
+    transform: translate(20px, -50%);
+    opacity: 1;
+  }
+
+  .emme-landing-hero:hover .swiper-arrow-next {
+    transform: translate(-20px, -50%);
+    opacity: 1;
+  }
 </style>
