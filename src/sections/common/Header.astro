@@ -1,3 +1,8 @@
+---
+import Instagram from "../../components/icons/social/Instagram.astro";
+import Whatsapp from "../../components/icons/social/Whatsapp.astro";
+---
+
 <header class="emme-common-header initial relative">
   <div
     class="overlay-background bg-accent/20 absolute top-0 left-0 -z-1 size-full"
@@ -15,19 +20,11 @@
       href="https://www.instagram.com/emmedental_/"
       target="_blank"
     >
-      <img
-        class="social-image mr-2 size-6"
-        src={`/images/utils/social/instagram.svg`}
-        alt="Síguenos en Instagram"
-      />
-      <span>@emmedental_</span>
+      <Instagram class="social-image mr-2 size-6" />
+      <span>emmedental_</span>
     </a>
     <a href="https://wa.me/34633390280" target="_blank">
-      <img
-        class="social-image mr-2 size-6"
-        src={`/images/utils/social/whatsapp.svg`}
-        alt="Contáctanos por WhatsApp"
-      />
+      <Whatsapp class="social-image mr-2 size-6" />
       <span>Contáctanos</span>
     </a>
   </div>
@@ -44,9 +41,12 @@
     align-items: center;
     height: 50px;
     z-index: 10;
+  }
+
+  .overlay-background {
     transition: all 300ms ease-in-out;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); */
   }
 
   /* Estado inicial (transparente, texto y bordes blancos) */
@@ -86,10 +86,6 @@
 
   .emme-common-header.scrolled .right-items > a {
     border-inline-start: solid 1px black;
-  }
-
-  .emme-common-header.scrolled .social-image {
-    filter: invert(1);
   }
 
   .items {

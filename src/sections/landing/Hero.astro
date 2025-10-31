@@ -1,6 +1,8 @@
 ---
 import { Swiper, SwiperWrapper, SwiperSlide } from "astro-swiper";
 import type { AstroSwiperType } from "astro-swiper";
+import StyledArrowNext from "../../components/icons/arrows/StyledArrowNext.astro";
+import StyledArrowPrev from "../../components/icons/arrows/StyledArrowPrev.astro";
 
 const astroSwiperOptions: AstroSwiperType = {
   options: {
@@ -36,21 +38,12 @@ const astroSwiperOptions: AstroSwiperType = {
       }
     </SwiperWrapper>
 
-    {
-      ["prev", "next"].map((direction) => (
-        <div class={`arrow-container-${direction}`}>
-          <img
-            class={`swiper-arrow-${direction}`}
-            src={`/images/utils/arrows/styled-arrow-${direction}.svg`}
-            alt={
-              direction === "prev"
-                ? "Diapositiva anterior"
-                : "Diapositiva siguiente"
-            }
-          />
-        </div>
-      ))
-    }
+    <StyledArrowNext
+      class="arrow-container-next hover:text-accent text-white"
+    />
+    <StyledArrowPrev
+      class="arrow-container-prev hover:text-accent text-white"
+    />
   </Swiper>
 </section>
 
