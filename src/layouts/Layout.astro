@@ -1,3 +1,8 @@
+---
+import Footer from "../sections/common/Footer.astro";
+import Header from "../sections/common/Header.astro";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,13 +29,17 @@
     <meta name="revisit-after" content="7 days" />
     <meta name="theme-color" content="#ffffff" />
   </head>
-  <body>
-    <slot />
+  <body class="bg-accent/20">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
 
 <style is:global>
-  @import "tailwindcss";
+  @import "../styles/global.css";
 
   @font-face {
     font-family: "apercu-regular-pro";
@@ -63,5 +72,22 @@
     margin: 0;
     width: 100%;
     height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    cursor: url("/images/utils/tooth/toothbrush.svg"), auto;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  * {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+    letter-spacing: 2.8px;
   }
 </style>

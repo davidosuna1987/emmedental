@@ -12,14 +12,14 @@ const astroSwiperOptions: AstroSwiperType = {
     speed: 1000,
     effect: "fade",
     navigation: {
-      nextEl: ".swiper-arrow-next",
-      prevEl: ".swiper-arrow-prev",
+      nextEl: ".arrow-container-next",
+      prevEl: ".arrow-container-prev",
     },
   },
 };
 ---
 
-<main class="emme-landing-hero">
+<section class="emme-landing-hero">
   <Swiper options={astroSwiperOptions.options} class="not-content">
     <SwiperWrapper>
       {
@@ -36,19 +36,23 @@ const astroSwiperOptions: AstroSwiperType = {
       }
     </SwiperWrapper>
 
-    <img
-      class="swiper-arrow-prev"
-      src="/images/utils/arrow-left.svg"
-      alt="Diapositiva anterior"
-    />
-
-    <img
-      class="swiper-arrow-next"
-      src="/images/utils/arrow-right.svg"
-      alt="Diapositiva siguiente"
-    />
+    {
+      ["prev", "next"].map((direction) => (
+        <div class={`arrow-container-${direction}`}>
+          <img
+            class={`swiper-arrow-${direction}`}
+            src={`/images/utils/arrows/styled-arrow-${direction}.svg`}
+            alt={
+              direction === "prev"
+                ? "Diapositiva anterior"
+                : "Diapositiva siguiente"
+            }
+          />
+        </div>
+      ))
+    }
   </Swiper>
-</main>
+</section>
 
 <style>
   .emme-landing-hero {
@@ -79,37 +83,45 @@ const astroSwiperOptions: AstroSwiperType = {
   }
 
   /* === Flechas de navegación === */
-  [class^="swiper-arrow-"] {
+  [class^="arrow-container-"] {
     position: absolute;
     top: 50%;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     transform: translateY(-50%) translateX(0);
-    cursor: pointer;
     z-index: 2;
     opacity: 0;
     transition:
       transform 300ms ease-in-out,
       opacity 300ms ease-in-out;
+    cursor: pointer;
   }
 
-  .swiper-arrow-prev {
+  .arrow-container-prev {
     left: 0;
-    transform: translate(-60px, -50%); /* fuera del viewport horizontalmente */
+    transform: translate(-80px, -50%); /* fuera del viewport horizontalmente */
   }
 
-  .swiper-arrow-next {
+  .arrow-container-next {
     right: 0;
-    transform: translate(60px, -50%); /* fuera del viewport horizontalmente */
+    transform: translate(80px, -50%); /* fuera del viewport horizontalmente */
+  }
+
+  [class^="swiper-arrow-"] {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
   }
 
   /* Hover en el slider → las flechas entran y aparecen */
-  .emme-landing-hero:hover .swiper-arrow-prev {
+  .emme-landing-hero:hover .arrow-container-prev {
     transform: translate(20px, -50%);
     opacity: 1;
   }
 
-  .emme-landing-hero:hover .swiper-arrow-next {
+  .emme-landing-hero:hover .arrow-container-next {
     transform: translate(-20px, -50%);
     opacity: 1;
   }

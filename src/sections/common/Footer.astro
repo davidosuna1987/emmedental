@@ -2,10 +2,201 @@
 
 ---
 
-<footer class="emme-common-footer container">
-	<h1>Footer</h1>
+<footer class="emme-common-footer">
+  <div class="footer-content">
+    <div class="footer-content-left flex gap-32">
+      <div class="footer-section contact-info">
+        <div class="address">
+          <p class="location">Carrer de les Vinyes, 10</p>
+          <p class="city">Mataró, Barcelona</p>
+        </div>
+        <div class="contact">
+          <p>Tel: <a href="tel:+34937414888">(+34) 937 414 888</a></p>
+          <p><a href="mailto:hola@emme.dental">hola@emme.dental</a></p>
+        </div>
+      </div>
+
+      <div class="footer-section schedule">
+        <div class="schedule-item">
+          <p class="day">Lunes-Jueves</p>
+          <p class="hours">9:30-14:00/15:30-19:00</p>
+        </div>
+        <div class="schedule-item">
+          <p class="day">Viernes</p>
+          <p class="hours">9:30-14:00</p>
+        </div>
+      </div>
+
+      <div class="footer-section legal">
+        <p class="legal-title">Aviso legal</p>
+        <p><a href="/politica-privacidad">Política de privacidad</a></p>
+        <p><a href="/politica-cookies">Política de cookies</a></p>
+      </div>
+    </div>
+
+    <div class="footer-section footer-content-right social pr-32">
+      <p class="social-title">SÍGUENOS</p>
+      <div class="social-links">
+        <p>
+          IG: <a href="https://instagram.com/emmedental" target="_blank"
+            >@emmedental</a
+          >
+        </p>
+        <p>
+          FB: <a href="https://facebook.com/emmedental" target="_blank"
+            >@emmedental</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator mr-10 ml-5 h-px bg-black/50"></div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <p class="copyright">© EMME DENTAL 2025. ALL RIGHTS RESERVED.</p>
+      <div class="certifications pr-5">
+        <img
+          class="w-64"
+          src="/images/sections/footer/dental-quality.png"
+          alt="Certificado Dental Quality"
+        />
+      </div>
+    </div>
+  </div>
 </footer>
 
 <style>
+  .emme-common-footer {
+    padding: 60px 0 30px;
+    color: #333;
+    line-height: 1.6;
+  }
 
+  .footer-content {
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-section h3 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .footer-section p {
+    margin: 8px 0;
+    font-size: 13px;
+  }
+
+  .footer-section a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: #fc7475;
+  }
+
+  .contact-info .location {
+    font-weight: 500;
+  }
+
+  .contact-info .city {
+    margin-bottom: 20px;
+  }
+
+  .schedule .day {
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .schedule .hours {
+    margin-bottom: 15px;
+    color: #666;
+  }
+
+  .legal .legal-title {
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .social .social-title {
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .footer-bottom {
+    padding-top: 30px;
+  }
+
+  .footer-bottom-content {
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+  }
+
+  .certifications {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .cert-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cert-text {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .certifications {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .emme-common-footer {
+      padding: 40px 0 20px;
+    }
+  }
 </style>
