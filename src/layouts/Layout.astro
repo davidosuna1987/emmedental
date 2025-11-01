@@ -48,9 +48,18 @@ import Header from "../sections/common/Header.astro";
     font-style: normal;
     font-display: swap;
   }
+
   @font-face {
     font-family: "Basis Grotesque Off White PRO";
     src: url("/fonts/basis-grotesque-off-white-pro.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Dancing Script";
+    src: url("/fonts/dancing-script-variable.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -68,10 +77,36 @@ import Header from "../sections/common/Header.astro";
     line-height: 1em;
   }
 
+  .font-serif {
+    font-family: "Dancing Script", cursive;
+    text-transform: none;
+  }
+
   a:hover,
   a:hover * {
     color: var(--color-accent) !important;
     transition: color 150ms ease-in-out;
+  }
+
+  strong {
+    color: var(--color-accent);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    text-wrap: pretty;
+    font-family: "Apercu Regular PRO", Helvetica, Arial, Lucida, sans-serif;
   }
 </style>
 
