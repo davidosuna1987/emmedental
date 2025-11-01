@@ -9,10 +9,10 @@ import Whatsapp from "../../components/icons/social/Whatsapp.astro";
   >
   </div>
   <div class="items left-items">
-    <a class="toggle-menu font-secondary">Menú</a>
+    <a class="toggle-menu font-secondary sm:text-2xl">Menú</a>
   </div>
   <div class="items center-items">
-    <a href="/" class="font-secondary">EMME Dental</a>
+    <a href="/" class="font-secondary sm:text-2xl">EMME Dental</a>
   </div>
   <div class="items right-items">
     <a
@@ -20,11 +20,11 @@ import Whatsapp from "../../components/icons/social/Whatsapp.astro";
       href="https://www.instagram.com/emmedental_/"
       target="_blank"
     >
-      <Instagram class="social-image size-6" />
+      <Instagram class="social-image size-4 sm:size-6" />
       <span class="ml-2 hidden lg:inline">emmedental_</span>
     </a>
     <a href="https://wa.me/34633390280" target="_blank">
-      <Whatsapp class="social-image size-6" />
+      <Whatsapp class="social-image size-4 sm:size-6" />
       <span class="ml-2 hidden lg:inline">Contáctanos</span>
     </a>
   </div>
@@ -110,10 +110,6 @@ import Whatsapp from "../../components/icons/social/Whatsapp.astro";
 
   .right-items {
     justify-content: flex-end;
-  }
-
-  .font-secondary {
-    font-size: 25px;
   }
 
   a {
