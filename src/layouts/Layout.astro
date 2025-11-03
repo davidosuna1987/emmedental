@@ -58,7 +58,7 @@ import Header from "../sections/common/Header.astro";
     <meta name="revisit-after" content="7 days" />
     <meta name="theme-color" content="#ffffff" />
   </head>
-  <body class="bg-accent/20">
+  <body class="bg-background">
     <Header />
     <main>
       <slot />
@@ -96,8 +96,12 @@ import Header from "../sections/common/Header.astro";
 
   * {
     box-sizing: border-box;
+  }
+
+  body {
     font-family:
       "Basis Grotesque Off White PRO", Helvetica, Arial, Lucida, sans-serif;
+    color: var(--color-text);
   }
 
   .font-secondary {
