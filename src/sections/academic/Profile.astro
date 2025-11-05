@@ -6,6 +6,13 @@ const highlightCardConfig = {
   class: "mb-8",
   highlight: true,
   accent: true,
+  shadow: true,
+};
+
+const educationCardConfig = {
+  accent: true,
+  small: true,
+  shadow: true,
 };
 
 const courseCardConfig = {
@@ -20,8 +27,8 @@ const { education, highlight, courses, collaborations } = portfolioData;
 ---
 
 <section class="academic-profile-section">
-  <div class="profile-container mx-auto max-w-4xl px-5">
-    <div class="profile-header mb-12 text-center">
+  <div class="profile-container">
+    <div class="profile-header bg-accent-light pt-32 pb-12 text-center">
       <h2 class="profile-title text-accent mb-4 font-serif text-4xl">
         {education.title}
       </h2>
@@ -31,75 +38,80 @@ const { education, highlight, courses, collaborations } = portfolioData;
     </div>
 
     <article class="profile-content">
-      <section class="education-section mb-16">
-        <div class="education-grid">
+      <section class="education-section bg-accent-light px-5 pb-32">
+        <div class="education-grid mx-auto max-w-4xl">
           <!-- Formación Académica -->
-          {education.cards.map((card) => <AcademicCard {...card} />)}
-        </div>
-      </section>
-
-      <!-- Cursos y Congresos -->
-      <section class="courses-section mb-12">
-        <div class="section-header mb-8">
-          <h2
-            class="profile-title text-accent mb-4 text-center font-serif text-4xl"
-          >
-            {courses.title}
-          </h2>
-          <p class="font-georgia mx-auto max-w-2xl text-center italic">
-            {courses.description}
-          </p>
-        </div>
-
-        <AcademicCard {...highlightCardConfig} {...highlight} />
-
-        <div class="courses-grid">
           {
-            courses.cards.map((card) => (
-              <AcademicCard {...courseCardConfig} {...card} />
+            education.cards.map((card) => (
+              <AcademicCard {...educationCardConfig} {...card} />
             ))
           }
         </div>
       </section>
 
-      <!-- Colaboraciones -->
-      <section class="collaborations-section my-24 text-center">
-        <h2 class="profile-title text-accent mb-1 font-serif text-4xl">
-          {collaborations.title}
-        </h2>
-        <p class="font-georgia mx-auto mb-4 max-w-2xl text-sm italic">
-          <strong>{collaborations.subtitle}</strong>
-        </p>
-        <p class="mx-auto max-w-2xl italic">{collaborations.description}</p>
-      </section>
-
-      <!-- Reflexión personal -->
-      <section class="personal-reflection">
-        <div class="reflection-card">
-          <div class="reflection-content">
-            <h4 class="reflection-title">Una Reflexión Personal</h4>
-            <p class="reflection-text">
-              Cuando miro atrás y veo todo este recorrido formativo, me siento
-              profundamente agradecida por haber tenido la oportunidad de
-              aprender de tantos grandes profesionales. Cada curso, cada máster,
-              cada congreso ha aportado algo valioso a mi práctica diaria. Pero
-              lo que más me llena de satisfacción es saber que toda esta
-              formación me permite ofrecer a mis pequeños pacientes y sus
-              familias la mejor atención posible, siempre desde la <strong
-                >cercanía, la empatía y la profesionalidad</strong
-              > que caracterizan mi forma de ejercer la odontología.
+      <div class="mx-auto max-w-4xl px-5">
+        <!-- Cursos y Congresos -->
+        <section class="courses-section pt-24 pb-12">
+          <div class="section-header mb-8">
+            <h2
+              class="profile-title text-accent mb-4 text-center font-serif text-4xl"
+            >
+              {courses.title}
+            </h2>
+            <p class="font-georgia mx-auto max-w-2xl text-center italic">
+              {courses.description}
             </p>
           </div>
-        </div>
-      </section>
+
+          <AcademicCard {...highlightCardConfig} {...highlight} />
+
+          <div class="courses-grid">
+            {
+              courses.cards.map((card) => (
+                <AcademicCard {...courseCardConfig} {...card} />
+              ))
+            }
+          </div>
+        </section>
+
+        <!-- Colaboraciones -->
+        <section class="collaborations-section my-24 text-center">
+          <h2 class="profile-title text-accent mb-1 font-serif text-4xl">
+            {collaborations.title}
+          </h2>
+          <p class="font-georgia mx-auto mb-4 max-w-2xl text-sm italic">
+            <strong>{collaborations.subtitle}</strong>
+          </p>
+          <p class="mx-auto max-w-2xl italic">{collaborations.description}</p>
+        </section>
+
+        <!-- Reflexión personal -->
+        <section class="personal-reflection">
+          <div class="reflection-card">
+            <div class="reflection-content">
+              <h4 class="reflection-title">Una Reflexión Personal</h4>
+              <p class="reflection-text">
+                Cuando miro atrás y veo todo este recorrido formativo, me siento
+                profundamente agradecida por haber tenido la oportunidad de
+                aprender de tantos grandes profesionales. Cada curso, cada
+                máster, cada congreso ha aportado algo valioso a mi práctica
+                diaria. Pero lo que más me llena de satisfacción es saber que
+                toda esta formación me permite ofrecer a mis pequeños pacientes
+                y sus familias la mejor atención posible, siempre desde la <strong
+                  >cercanía, la empatía y la profesionalidad</strong
+                > que caracterizan mi forma de ejercer la odontología.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
     </article>
   </div>
 </section>
 
 <style>
   .academic-profile-section {
-    padding: 80px 0;
-    background: #fafafa;
+    margin: 80px 0;
   }
 
   .profile-title {
@@ -110,6 +122,7 @@ const { education, highlight, courses, collaborations } = portfolioData;
 
   .education-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
   }
 
@@ -148,6 +161,7 @@ const { education, highlight, courses, collaborations } = portfolioData;
 
   /* Responsive Design */
   @media (max-width: 768px) {
+    .education-grid,
     .courses-grid {
       grid-template-columns: 1fr;
     }
@@ -155,7 +169,7 @@ const { education, highlight, courses, collaborations } = portfolioData;
 
   @media (max-width: 480px) {
     .academic-profile-section {
-      padding: 40px 0;
+      margin: 40px 0;
     }
 
     .profile-title {
