@@ -12,7 +12,7 @@ import Whatsapp from "../../components/icons/social/Whatsapp.astro";
     <a class="toggle-menu font-secondary sm:text-2xl">Menú</a>
   </div>
   <div class="items center-items">
-    <a href="/" class="font-secondary sm:text-2xl">EMME Dental</a>
+    <a href="/" class="company-name font-secondary sm:text-2xl">EMME Dental</a>
   </div>
   <div class="items right-items">
     <a
@@ -47,6 +47,13 @@ import Whatsapp from "../../components/icons/social/Whatsapp.astro";
     transition: all 300ms ease-in-out;
     /* backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); */
+  }
+
+  .toggle-menu,
+  .company-name {
+    letter-spacing: 4.75px;
+    line-height: 1;
+    text-align: center;
   }
 
   /* Estado inicial (transparente, texto y bordes blancos) */

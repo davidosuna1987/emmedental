@@ -1,0 +1,168 @@
+{
+  "education": {
+    "title": "Mi Recorrido Académico",
+    "description": "He tenido la fortuna de formarme con grandes profesionales que me han enseñado no solo técnicas, sino también la importancia de la empatía y la dedicación en el trato con nuestros pacientes más pequeños.",
+    "cards": [
+      {
+        "badge": "2025",
+        "level": "Especialización Avanzada",
+        "title": "Postgrado en Ortodoncia Quirúrgica y Cirugía Ortognática",
+        "descriptionLabel": "Formedika Madrid",
+        "description": "Decidí dar un paso más en mi especialización para poder abordar los casos más complejos que requieren un trabajo multidisciplinar entre ortodoncia y cirugía maxilofacial."
+      },
+      {
+        "badge": "2023",
+        "level": "Máster Especializado",
+        "title": "Máster Ortodoncia Plástica",
+        "descriptionLabel": "Dr Arturo Vela",
+        "description": "Mi interés por combinar funcionalidad y estética me llevó a formarme en las técnicas más avanzadas de ortodoncia plástica."
+      },
+      {
+        "badge": "2021-2022",
+        "level": "Máster Universitario",
+        "title": "Máster Universitario de Ortodoncia y Ortopedia Dentofacial",
+        "descriptionLabel": "Universidad de Oviedo",
+        "description": "Quise complementar mi formación anterior con una perspectiva universitaria oficial que enriqueciera mi comprensión integral de la ortodoncia."
+      },
+      {
+        "badge": "2021",
+        "level": "Programa Avanzado",
+        "title": "Programa Ortodoncia Avanzada",
+        "descriptionLabel": "Dr Arturo Vela",
+        "description": "Profundizando en técnicas avanzadas de ortodoncia con uno de los referentes en la especialidad."
+      },
+      {
+        "badge": "2020-2021",
+        "level": "Máster Especializado",
+        "title": "Máster Sistema Damon",
+        "descriptionLabel": "Dr Ramón Perera - Dr Rafael García",
+        "description": "El sistema Damon revolucionó mi forma de entender la ortodoncia, y quise formarme con los mejores especialistas en esta técnica."
+      },
+      {
+        "badge": "2020",
+        "level": "Certificación",
+        "title": "Certificación Oficial Invisalign",
+        "descriptionLabel": "Manuel Román Academy",
+        "description": "La demanda creciente de tratamientos más estéticos por parte de mis pacientes me motivó a certificarme en esta innovadora técnica."
+      },
+      {
+        "badge": "2018-2020",
+        "level": "Máster Universitario",
+        "title": "Máster Ortodoncia, Ortopedia y Rehabilitación Neuro-oclusal",
+        "descriptionLabel": "UDIMA - IPAO Madrid",
+        "description": "Mi primera gran inmersión en el mundo de la ortodoncia. Una experiencia transformadora que definió mi rumbo profesional hacia la especialización."
+      },
+      {
+        "badge": "2015-2018",
+        "level": "Máster Universitario",
+        "title": "Máster Odontopediatría",
+        "descriptionLabel": "Universidad de Valencia",
+        "description": "Tres años intensos y enriquecedores donde aprendí no solo técnicas clínicas, sino también el arte de comunicarme con mis pequeños pacientes y ganarme su confianza."
+      },
+      {
+        "badge": "2007-2012",
+        "level": "Licenciatura",
+        "title": "Licenciatura en Odontología",
+        "descriptionLabel": "Universidad Europea de Madrid",
+        "description": "Aquí comenzó todo. Durante estos años descubrí mi verdadera vocación y comprendí que quería dedicar mi carrera al cuidado de la sonrisa de los más pequeños."
+      },
+      {
+        "badge": "2007",
+        "level": "Diploma",
+        "title": "Diploma en Director de Protección Radiológica y Radiodiagnóstico Dental",
+        "descriptionLabel": "Universidad Europea de Madrid",
+        "description": "Formación complementaria esencial para el manejo seguro de equipos radiológicos en la práctica dental."
+      },
+      {
+        "badge": "2005-2007",
+        "level": "Bachillerato",
+        "title": "Título de Bachillerato Científico",
+        "descriptionLabel": "Instituto Pablo Sarasate, Lodosa, Navarra",
+        "description": "En mi tierra natal, donde se forjaron las bases científicas que me acompañarían en toda mi carrera profesional."
+      },
+      {
+        "badge": "2005",
+        "level": "Certificación",
+        "title": "Título en Socorrismo y Primeros Auxilios",
+        "descriptionLabel": "Gobierno de Navarra",
+        "description": "Desde joven, siempre he sentido la vocación de ayudar a los demás y estar preparada para situaciones de emergencia."
+      }
+    ]
+  },
+  "highlight": {
+    "title": "Comité Organizador del Congreso de Odontopediatría",
+    "descriptionLabel": "Toledo",
+    "description": "Ha sido un verdadero honor formar parte del comité organizador de este importante encuentro científico. Contribuir al intercambio de conocimientos entre colegas es una responsabilidad que asumo con gran satisfacción."
+  },
+  "courses": {
+    "title": "Compromiso con la Formación Continua",
+    "description": "Porque creo firmemente que el aprendizaje nunca termina, he participado en numerosos cursos y congresos que han enriquecido mi práctica diaria",
+    "cards": [
+      {
+        "badge": "2024",
+        "title": "Curso Odontología Mínimamente Invasiva",
+        "descriptionLabel": "COENA",
+        "description": "Siempre busco técnicas que preserven al máximo la estructura dental natural."
+      },
+      {
+        "badge": "2017",
+        "title": "Estancia Hospital Sant Joan de Déu",
+        "descriptionLabel": "Barcelona",
+        "description": "Una experiencia muy enriquecedora en uno de los mejores hospitales pediátricos."
+      },
+      {
+        "badge": "2016-2018",
+        "title": "Ponente Congreso Odontopediatría",
+        "descriptionLabel": "Comunicaciones Científicas",
+        "description": "Compartir experiencias con colegas es una de las partes más gratificantes."
+      },
+      {
+        "badge": "2016",
+        "title": "Diploma RCP Básica y Avanzada",
+        "descriptionLabel": "Universidad de Valencia",
+        "description": "Formación esencial para el manejo de emergencias en la clínica dental."
+      },
+      {
+        "badge": "2014-2015",
+        "title": "Diploma en Actualización en Endodoncia",
+        "descriptionLabel": "Hospital Dental Arturo Soria, Madrid",
+        "description": "Ampliando mis conocimientos en tratamientos endodónticos avanzados."
+      },
+      {
+        "badge": "2013-2014",
+        "title": "Diploma en Traumatología Oral",
+        "descriptionLabel": "Universidad de Valencia",
+        "description": "Especialización crucial para el manejo de urgencias dentales en niños."
+      },
+      {
+        "badge": "2013",
+        "title": "Curso Dolor Orofacial",
+        "descriptionLabel": "Colegio de Odontólogos y Estomatólogos de Cataluña",
+        "description": "Profundizando en el diagnóstico y tratamiento del dolor orofacial."
+      },
+      {
+        "badge": "2012-2013",
+        "title": "Diploma en Medicina Oral",
+        "descriptionLabel": "Universidad de Valencia",
+        "description": "Formación complementaria en patología oral y medicina estomatológica."
+      },
+      {
+        "badge": "2012",
+        "title": "Curso Manejo de la Conducta en Odontopediatría",
+        "descriptionLabel": "Colegio Oficial de Odontólogos y Estomatólogos de Navarra",
+        "description": "Aprendiendo técnicas esenciales para el trato con pacientes infantiles."
+      },
+      {
+        "badge": "2010-2017",
+        "title": "Cursos Pediatría - Odontopediatría",
+        "descriptionLabel": "Asociación de Pediatría y Odontopediatría Española",
+        "description": "Años de formación continua que han sido fundamentales en mi desarrollo profesional."
+      }
+    ]
+  },
+  "collaborations": {
+    "title": "Mi Compromiso Social",
+    "subtitle": "Colaboración con la Fundación Mira'm (Pacientes TEA) en Valencia",
+    "description": "Trabajar con niños con necesidades especiales me ha enseñado muchísimo sobre paciencia, adaptación y, sobre todo, sobre la importancia de personalizar cada tratamiento. Cada niño es único y merece una atención especial y comprensiva."
+  }
+}

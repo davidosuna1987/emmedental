@@ -20,33 +20,39 @@ import Header from "../sections/common/Header.astro";
     />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Dra. Esther Martínez - Odontopediatría y Ortodoncia Pamplona">
-    <meta property="og:description" content="Especialista en odontopediatría y ortodoncia en Pamplona, Navarra. Tratamiento integral desde bebés hasta adolescentes.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_ES">
+    <meta
+      property="og:title"
+      content="Dra. Esther Martínez - Odontopediatría y Ortodoncia Pamplona"
+    />
+    <meta
+      property="og:description"
+      content="Especialista en odontopediatría y ortodoncia en Pamplona, Navarra. Tratamiento integral desde bebés hasta adolescentes."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
 
     <!-- SEO Local -->
-    <meta name="geo.region" content="ES-NA">
-    <meta name="geo.placename" content="Pamplona, Navarra">
-    <meta name="geo.position" content="42.816667;-1.65">
+    <meta name="geo.region" content="ES-NA" />
+    <meta name="geo.placename" content="Pamplona, Navarra" />
+    <meta name="geo.position" content="42.816667;-1.65" />
 
     <!-- Schema.org para dentista -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Dentist",
-      "name": "Dra. Esther Martínez Martínez",
-      "specialty": ["Odontopediatría", "Ortodoncia"],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Pamplona",
-        "addressRegion": "Navarra",
-        "addressCountry": "ES"
-      },
-      "areaServed": ["Pamplona", "Navarra", "Comarca de Pamplona"],
-      "priceRange": "€€",
-      "description": "Especialista en odontopediatría y ortodoncia. Doble formación en ortodoncia y máster en odontopediatría. Tratamiento integral desde bebés hasta adolescentes."
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Dra. Esther Martínez Martínez",
+        "specialty": ["Odontopediatría", "Ortodoncia"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pamplona",
+          "addressRegion": "Navarra",
+          "addressCountry": "ES"
+        },
+        "areaServed": ["Pamplona", "Navarra", "Comarca de Pamplona"],
+        "priceRange": "€€",
+        "description": "Especialista en odontopediatría y ortodoncia. Doble formación en ortodoncia y máster en odontopediatría. Tratamiento integral desde bebés hasta adolescentes."
+      }
     </script>
 
     <meta name="author" content="David Osuna" />
@@ -106,12 +112,15 @@ import Header from "../sections/common/Header.astro";
 
   .font-secondary {
     font-family: "Apercu regular pro", Helvetica, Arial, Lucida, sans-serif;
-    letter-spacing: 4.75px;
-    line-height: 1em;
   }
 
   .font-serif {
     font-family: "Dancing Script", cursive;
+    text-transform: none;
+  }
+
+  .font-georgia {
+    font-family: Georgia, serif !important;
     text-transform: none;
   }
 
@@ -138,7 +147,7 @@ import Header from "../sections/common/Header.astro";
     font-weight: 600;
     color: var(--color-accent);
     text-transform: uppercase;
-    text-wrap: pretty;
+    text-wrap: balance;
     font-family: "Apercu Regular PRO", Helvetica, Arial, Lucida, sans-serif;
   }
 </style>
