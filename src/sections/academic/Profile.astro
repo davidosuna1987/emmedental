@@ -38,7 +38,10 @@ const { education, highlight, courses, collaborations } = portfolioData;
     </div>
 
     <article class="profile-content">
-      <section class="education-section bg-accent-light px-5 pb-32">
+      <section
+        class="education-section bg-accent-light px-5 pb-32"
+        id="education-section"
+      >
         <div class="education-grid mx-auto max-w-4xl">
           <!-- Formación Académica -->
           {
@@ -47,11 +50,14 @@ const { education, highlight, courses, collaborations } = portfolioData;
             ))
           }
         </div>
+        <div class="expand-button-container">
+          <button id="expand-button" class="expand-button"> VER TODO </button>
+        </div>
       </section>
 
       <div class="mx-auto max-w-4xl px-5">
         <!-- Cursos y Congresos -->
-        <section class="courses-section pt-24 pb-12">
+        <section class="courses-section pt-24 pb-12" id="courses-section">
           <div class="section-header mb-8">
             <h2
               class="profile-title text-accent mb-4 text-center font-serif text-4xl"
@@ -65,12 +71,19 @@ const { education, highlight, courses, collaborations } = portfolioData;
 
           <AcademicCard {...highlightCardConfig} {...highlight} />
 
-          <div class="courses-grid">
-            {
-              courses.cards.map((card) => (
-                <AcademicCard {...courseCardConfig} {...card} />
-              ))
-            }
+          <div class="courses-grid-container">
+            <div class="courses-grid">
+              {
+                courses.cards.map((card) => (
+                  <AcademicCard {...courseCardConfig} {...card} />
+                ))
+              }
+            </div>
+            <div class="expand-button-container courses-expand-container">
+              <button id="courses-expand-button" class="expand-button">
+                VER TODO
+              </button>
+            </div>
           </div>
         </section>
 
@@ -126,10 +139,75 @@ const { education, highlight, courses, collaborations } = portfolioData;
     gap: 24px;
   }
 
+  /* Education section height control */
+  .education-section {
+    height: 500px;
+    overflow: hidden;
+    transition: height 300ms ease-in-out;
+    position: relative;
+  }
+
+  .expand-button-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background: linear-gradient(transparent, var(--color-background));
+    transition: background 300ms ease-in-out;
+    z-index: 10;
+  }
+
+  .education-section.expanded .expand-button-container {
+    background: transparent;
+  }
+
+  .expand-button {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(252, 116, 117, 0.3);
+    transition: all 300ms ease-in-out;
+    text-transform: uppercase;
+  }
+
+  .expand-button:hover {
+    background: #fa6465;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(252, 116, 117, 0.4);
+  }
+
   .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+  }
+
+  /* Courses section height control */
+  .courses-grid-container {
+    height: 500px;
+    overflow: hidden;
+    transition: height 300ms ease-in-out;
+    position: relative;
+  }
+
+  .courses-expand-container {
+    background: linear-gradient(transparent, white);
+  }
+
+  .courses-grid-container.expanded .courses-expand-container {
+    background: transparent;
   }
 
   .reflection-card {
@@ -181,3 +259,96 @@ const { education, highlight, courses, collaborations } = portfolioData;
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const educationSection = document.getElementById("education-section");
+    const expandButton = document.getElementById("expand-button");
+    let isExpanded = false;
+
+    const coursesSection = document.getElementById("courses-section");
+    const coursesContainer = coursesSection?.querySelector(
+      ".courses-grid-container",
+    ) as HTMLElement;
+    const coursesExpandButton = document.getElementById(
+      "courses-expand-button",
+    );
+    let isCoursesExpanded = false;
+
+    // Education section functionality
+    if (educationSection && expandButton) {
+      expandButton.addEventListener("click", () => {
+        if (!isExpanded) {
+          // Expandir
+          const currentHeight = educationSection.scrollHeight;
+          educationSection.style.height = currentHeight + "px";
+          educationSection.classList.add("expanded");
+
+          isExpanded = true;
+
+          // Después de la transición, cambiamos a auto y el texto del botón
+          setTimeout(() => {
+            educationSection.style.height = "auto";
+            expandButton.textContent = "MOSTRAR MENOS";
+          }, 300);
+        } else {
+          // Contraer
+          // Primero establecemos la altura actual para poder hacer la transición
+          const currentHeight = educationSection.scrollHeight;
+          educationSection.style.height = currentHeight + "px";
+          educationSection.classList.remove("expanded");
+
+          // Forzamos un repaint y luego contraemos
+          requestAnimationFrame(() => {
+            educationSection.style.height = "500px";
+          });
+
+          isExpanded = false;
+
+          // Cambiar texto del botón después de la transición
+          setTimeout(() => {
+            expandButton.textContent = "VER TODO";
+          }, 300);
+        }
+      });
+    }
+
+    // Courses section functionality
+    if (coursesContainer && coursesExpandButton) {
+      coursesExpandButton.addEventListener("click", () => {
+        if (!isCoursesExpanded) {
+          // Expandir
+          const currentHeight = coursesContainer.scrollHeight;
+          coursesContainer.style.height = currentHeight + "px";
+          coursesContainer.classList.add("expanded");
+
+          isCoursesExpanded = true;
+
+          // Después de la transición, cambiamos a auto y el texto del botón
+          setTimeout(() => {
+            coursesContainer.style.height = "auto";
+            coursesExpandButton.textContent = "MOSTRAR MENOS";
+          }, 300);
+        } else {
+          // Contraer
+          // Primero establecemos la altura actual para poder hacer la transición
+          const currentHeight = coursesContainer.scrollHeight;
+          coursesContainer.style.height = currentHeight + "px";
+          coursesContainer.classList.remove("expanded");
+
+          // Forzamos un repaint y luego contraemos
+          requestAnimationFrame(() => {
+            coursesContainer.style.height = "500px";
+          });
+
+          isCoursesExpanded = false;
+
+          // Cambiar texto del botón después de la transición
+          setTimeout(() => {
+            coursesExpandButton.textContent = "VER TODO";
+          }, 300);
+        }
+      });
+    }
+  });
+</script>
