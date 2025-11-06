@@ -1,0 +1,22 @@
+---
+interface Props {
+  name: string;
+  alt?: string;
+  class?: string;
+}
+
+const {
+  name,
+  alt = "Caricatura de ortodoncista",
+  class: className,
+} = Astro.props;
+---
+
+<img
+  class:list={[
+    "absolute -right-8 -bottom-8 size-52 opacity-30 md:-right-12 md:-bottom-12 md:size-64",
+    className,
+  ]}
+  src={`/public/images/characters/${name}.png`}
+  alt={alt}
+/>

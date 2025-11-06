@@ -1,5 +1,5 @@
 ---
-
+import AboutCharacter from "../components/about/Character.astro";
 ---
 
 <section class="about-section">
@@ -33,13 +33,14 @@
   <!-- Contenido principal -->
   <div class="about-content">
     <div
-      class="about-grid mx-auto mb-6 grid max-w-7xl grid-cols-1 gap-6 px-5 md:grid-cols-2"
+      class="about-grid mx-auto mb-6 max-w-7xl gap-6 px-5 md:grid md:grid-cols-2"
     >
       <!-- Primera sección con ícono de graduación -->
       <div class="content-block">
-        <div class="icon-container">
+        <AboutCharacter name="osito-estudiando-frente-al-ordenador-alpha-min" />
+        <!-- <div class="icon-container">
           <div class="graduation-icon">🎓</div>
-        </div>
+        </div> -->
         <div class="text-content">
           <p>
             <strong>Navarra de corazón</strong>, me licencié en <strong
@@ -55,9 +56,10 @@
 
       <!-- Segunda sección con ícono de documento -->
       <div class="content-block">
-        <div class="icon-container">
+        <!-- <div class="icon-container">
           <div class="document-icon">📋</div>
-        </div>
+        </div> -->
+        <AboutCharacter name="osito-dentista-trabajando-alpha-min" />
         <div class="text-content">
           <p>
             Mi deseo de ofrecer una atención especializada y de calidad me llevó
@@ -72,9 +74,10 @@
 
       <!-- Tercera sección con ícono de certificado -->
       <div class="content-block">
-        <div class="icon-container">
+        <!-- <div class="icon-container">
           <div class="certificate-icon">📜</div>
-        </div>
+        </div> -->
+        <AboutCharacter name="osito-dentista-alpha-min" />
         <div class="text-content">
           <p>
             Tras esta etapa, decidí ampliar mis conocimientos cursando el <strong
@@ -91,9 +94,10 @@
 
       <!-- Sección de formación continua -->
       <div class="content-block">
-        <div class="icon-container">
+        <!-- <div class="icon-container">
           <div class="continuous-learning-icon">📚</div>
-        </div>
+        </div> -->
+        <AboutCharacter name="osito-simpatico-con-pila-de-libros-alpha-min" />
         <div class="text-content">
           <p>
             Convencida de que la ortodoncia evoluciona cada día, he continuado
@@ -109,10 +113,15 @@
     <div class="about-container">
       <!-- Sección de 2025 con destacado -->
       <div class="content-block highlight bg-accent-light">
-        <div class="icon-container">
+        <!-- <div class="icon-container">
           <div class="congress-icon">🏆</div>
-        </div>
-        <div class="text-content text-accent">
+        </div> -->
+        <img
+          class="absolute -top-44 -left-12 -z-10 size-64"
+          src="/public/images/characters/tigre-graduado-cepillo-de-dientes-alpha-min.png"
+          alt="Caricatura de ortodoncista"
+        />
+        <div class="text-content text-accent relative z-10">
           <p>
             En el año <strong>2025</strong>, he tenido el honor de formar parte
             del <strong
@@ -163,7 +172,7 @@
 
   .about-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 80px auto 0;
     padding: 0 40px;
   }
 
@@ -214,6 +223,7 @@
     display: flex;
     gap: 30px;
     align-items: flex-start;
+    position: relative;
   }
 
   .content-block.highlight {
@@ -247,6 +257,7 @@
   }
 
   .text-content {
+    position: relative;
     flex: 1;
   }
 
@@ -380,6 +391,7 @@
   @media (max-width: 768px) {
     .about-container {
       padding: 0 20px;
+      margin-top: 80px;
     }
 
     .about-header {
